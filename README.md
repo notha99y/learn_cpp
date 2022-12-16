@@ -33,6 +33,26 @@ int main(){
 }
 ```
 
+## Compiling your code
+To do so you would need to have a cpp compiler installed.
+
+For windows you need to edit the path environment to ensure that the OS can know where the compiler is installed.
+
+### Command line
+Compiled code usually have the following file format for the os:
+- Windows: `.exe`
+- MacOS or Linux: not extension
+
+```bash
+g++ -Wall -std=c++14 main.cpp -o main.exe
+```
+- -Wall: show all warnings
+- -std=c++14: using the cpp 14 standards
+- -o: output name
+
+### Web-based c++ compiler
+- https://cpp.sh/
+
 # Reference
 - youtube https://www.youtube.com/watch?v=ZzaPdXTrSb8&ab_channel=ProgrammingwithMosh
 - https://www.learncpp.com/
