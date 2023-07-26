@@ -100,3 +100,25 @@ cout << *int_ptr << endl; // 100
 
 delete int_ptr;
 ```
+
+## Relationship Between Arrays and Pointers
+- the value of an array name is the address of the first element in the array
+- the value of a pointer variable is an address
+- if the pointer points to the same data types as the array element then the pointer and array name can be used interchangeable (almost)
+
+```cpp
+int scores[] {100, 95, 89};
+
+cout << scores << endl; // 0x61fec8
+cout << *scores << endl; // 100
+
+int *score_ptr {scores};
+
+cout << score_ptr << endl; // 0x61fec8
+cout << *score_ptr << endl; // 100
+
+// we can access the elements of an array like this using the pointer
+cout << score_ptr[0] << endl; // 100
+cout << score_ptr[1] << endl; // 95
+cout << score_ptr[2] << endl; // 89
+```
