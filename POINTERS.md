@@ -112,7 +112,7 @@ int scores[] {100, 95, 89};
 cout << scores << endl; // 0x61fec8
 cout << *scores << endl; // 100
 
-int *score_ptr {scores};
+int *score_ptr {scores}; // we dont need to put the & here because the value of an array name is the address of the first element in the array 
 
 cout << score_ptr << endl; // 0x61fec8
 cout << *score_ptr << endl; // 100
@@ -121,4 +121,61 @@ cout << *score_ptr << endl; // 100
 cout << score_ptr[0] << endl; // 100
 cout << score_ptr[1] << endl; // 95
 cout << score_ptr[2] << endl; // 89
+
+// we can also still access the address of other other elements of an array like this
+
+// when we add 1, we are adding the address of the next integer which is 4 bytes away
+cout << score_ptr << endl; // 0x61ff10
+cout << score_ptr + 1 << endl; // 0x61ff14 
+cout << score_ptr + 2 << endl; // 0x61ff18
+
+// with this we can follow the pointer and dereference it to get the value
+cout << *score_ptr << endl; // 100
+cout << *(score_ptr + 1) << endl; // 95 
+cout << *(score_ptr + 2) << endl; // 89
 ```
+
+### Subscript and Offset notation equivalence
+
+```cpp
+int array_name[] {1,2,3,4,5};
+int *pointer_name {array_name};
+
+// they are all the same
+// subscript notation
+array_name[index]
+pointer_name[index]
+// offset notation
+*(array_name + index)
+*(pointer_name + index)
+```
+
+## Pointer Arithmetic
+- Pointers can be used in 
+    - assignment expressions
+    - arithmetic expressions
+    - comparsion expressions
+- C++ allows pointer arithmetic
+- Pointer arithmetic only make sense with raw arrays
+
+### Increment and Decrement operator
+- (++) increments a pointer to point to the next array element
+```cpp
+int_ptr++;
+```
+- (--) decrements a pointer to point to the previous array element
+```cpp
+int_ptr--;
+```
+
+we can also use the + and -
+
+### Subtracting two pointers
+- When we substract two pointers of the same data type it will return the number of elements between the pointers
+```cpp
+int n = int_ptr2 - int_ptr1;
+```
+
+
+### Comparing two pointers
+Determine if two pointers are pointing to the same location
